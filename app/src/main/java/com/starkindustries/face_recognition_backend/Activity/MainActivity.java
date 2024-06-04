@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     public AppCompatImageView register_image_view;
     public AppCompatButton register;
     public AppCompatEditText register_id;
-    public static HashMap<String, FaceClassifier.Recognition> registered = new HashMap<>();
+//    public static HashMap<String, FaceClassifier.Recognition> registered = new HashMap<>();
 
     // High-accuracy landmark detection and face classification
 //    FaceDetectorOptions options=
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
         detector = com.google.mlkit.vision.face.FaceDetection.getClient(options);
         try
         {
-            classifier= TFLiteFaceRecognition.create(getAssets(),"facenet.tflite",160,false);
+            classifier= TFLiteFaceRecognition.create(getAssets(),"facenet.tflite",160,false,MainActivity.this);
         }
         catch (Exception e)
         {
